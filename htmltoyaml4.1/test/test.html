@@ -1,0 +1,32 @@
+<script language="javascript"> 
+function submitAction(action_nm) 
+{ 
+var targetForm = document.qryposfrm; 
+targetForm.action = action_nm; 
+targetForm.submit(); 
+} 
+
+
+function myFunction()
+{
+var n=document.getElementById("test").value	
+alert(n);
+}
+</script> 
+
+
+<form method="post" id="qryposfrm" name="qryposfrm"> 
+<tr> 
+<td colspan="4" height="29" align="center"> 
+<input name="qry" type="submit" class="btn" value="1" onclick="submitAction('handle.php')"/>
+    
+<input name="down" type="submit" class="btn" value="2" onclick="submitAction('test.php')" /> 
+    
+</td> 
+</tr> 
+</form > 
+<button onclick="myFunction()">点击这里</button>
+<select id="test"  name="test">   
+  <option   value="1">text1</option>   
+  <option   value="2">text2</option>   
+</select>

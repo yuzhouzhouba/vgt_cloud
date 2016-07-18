@@ -1,0 +1,19 @@
+---
+machine: General_x86_CPU
+status: available
+img: Dom0_Ubuntu 16.04
+itp: ITP required
+type: kvm
+ip: 5192.168.1.xxx
+mac: 500:1E:67:EE:0E:CE
+vnc: 5VNC of ITP remote machine
+comip: 5192.168.1.xxx:4444
+user: chenghaoyang
+xenc: >
+    dom0_max_vcpus=6 dom0_mem=2048M iommu=1 loglvl=all
+    guest_loglvl=all msi=1 conring_size=4M noreboot console=com1
+    com1=115200,8n1 sync_console
+kernel: >
+    console=hvc0 consoleblank=0 intel_iommu=igfx_off
+    i915.hvm_boot_foreground=1 ignore_loglevel conring_size=4M
+    sync_console
