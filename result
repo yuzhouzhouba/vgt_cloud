@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "./machine.py", line 3, in <module>
+    import yaml
+ImportError: No module named yaml

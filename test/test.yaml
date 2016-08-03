@@ -1,0 +1,25 @@
+---
+machine: BDW_01
+img: Dom0_Ubuntu 16.04
+itp: ITP required
+xen: ""
+kvm: KvmGT
+ip: 192.168.1.xxx
+vnc: VNC of ITP remote machine
+comip: 192.168.1.xxx:4444
+xenc: >
+    dom0_max_vcpus=6 dom0_mem=2048M iommu=1 loglvl=all
+    guest_loglvl=all msi=1 conring_size=4M noreboot vgt=1
+    console=com1 com1=115200,8n1 sync_console
+kernel: >
+    dom0_max_vcpus=6 dom0_mem=2048M iommu=1 loglvl=all
+    guest_loglvl=all msi=1 conring_size=4M noreboot vgt=1
+    console=com1 com1=115200,8n1 sync_console
+boot: >
+    root=UUID=3865f7bb-1e66-4222-ac12-70dc62af4e25 ro
+    $vt_handoff console=hvc0 consoleblank=0
+    i915.hvm_boot_foreground=1 ignore_loglevel
+    i915.enable_reset=0 upstart text i915.render_engine_reset=0
+    i915.enable_hangcheck=0 i915.shadow_execlist_context=0
+    i915.shadow_cmd_buffer=0
+locate: /boot/efi/EFI/ubuntu/bzImage
